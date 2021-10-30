@@ -86,6 +86,7 @@ namespace sendmail
                 MessageBox.Show("Bạn nhập sai ID hoặc password!, vui lòng kiểm tra lại!");
             }
         }
+
         private void btnDanhSach_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -96,10 +97,7 @@ namespace sendmail
 
         }
     }
+
 }
 //https://www.google.com/settings/u/1/security/lesssecureapps  cài đặt ứng dụng kém bảo mật hơn.
-
-
-    }
-}
 

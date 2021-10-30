@@ -1,0 +1,5 @@
+E:\SEND_MAIL\sendmail\sendmail\obj\Debug\sendmail.csproj.AssemblyReference.cache
+E:\SEND_MAIL\sendmail\sendmail\obj\Debug\sendmail.Form1.resources
+E:\SEND_MAIL\sendmail\sendmail\obj\Debug\sendmail.Properties.Resources.resources
+E:\SEND_MAIL\sendmail\sendmail\obj\Debug\sendmail.csproj.GenerateResource.cache
+E:\SEND_MAIL\sendmail\sendmail\obj\Debug\sendmail.csproj.CoreCompileInputs.cache
