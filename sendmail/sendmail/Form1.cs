@@ -30,6 +30,38 @@ namespace sendmail
                 txbAttack.Text = dialog.FileName;
             }
         }
+        private void btnSent_Click(object sender, EventArgs e)
+        {
+            Thread threadd = new Thread(() =>
+            {
+                attack = null;
+                try
+                {
+                    //FileInfo file = new FileInfo(txbAttack.Text);
+                    attack = new Attachment(txbAttack.Text);
+                }
+                catch { }
+
+                //Thao tác với file.
+                StreamReader sr = new StreamReader(txbTo.Text);
+                string email;
+                while ((email = sr.ReadLine()) != null)
+                {
+                    Sentmail(txbId.Text, email, txbSubject.Text, txbMessage.Text, attack);
+                }
+                sr.Close();
+            });
+            threadd.Start();
+
+        }
+        /// <summary>
+        /// gửi mail theo các thông tin truyền vào!
+        /// </summary>
+        /// <param name="to"></param>
+        /// <param name="from"></param>
+        /// <param name="subject"></param>
+        /// <param name="message"></param>
+        /// <param name="file"></param>
         void Sentmail(string from, string to, string subject, string message, Attachment file = null)
         {
             try
