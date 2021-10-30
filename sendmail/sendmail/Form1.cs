@@ -30,6 +30,31 @@ namespace sendmail
                 txbAttack.Text = dialog.FileName;
             }
         }
+        void Sentmail(string from, string to, string subject, string message, Attachment file = null)
+        {
+            try
+            {
+                MailMessage Message = new MailMessage(from, to, subject, message);
+
+                if (file != null)
+                {
+                    Message.Attachments.Add(file);
+                }
+
+                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                client.EnableSsl = true;
+
+
+                client.Credentials = new NetworkCredential(txbId.Text, txbPassword.Text);
+
+                client.Send(Message);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Bạn nhập sai ID hoặc password!, vui lòng kiểm tra lại!");
+            }
+        }
+
     }
 }
 
